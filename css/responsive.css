@@ -1,0 +1,675 @@
+/* 
+ * Responsive Design Styles for Digital Canvas
+ * Mobile-first approach with breakpoints for all devices
+ */
+
+/* Base Mobile Styles (320px - 767px) */
+@media (max-width: 767px) {
+    :root {
+        --spacing-md: 16px;
+        --spacing-lg: 24px;
+        --spacing-xl: 32px;
+        --spacing-xxl: 40px;
+        --spacing-xxxl: 48px;
+    }
+
+    /* Navigation */
+    .nav-container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .logo a {
+        font-size: 1.2rem;
+    }
+
+    .logo-sub {
+        font-size: 0.7rem;
+        margin-top: -3px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .menu-btn {
+        display: flex;
+        z-index: 1001;
+    }
+
+    .theme-btn {
+        padding: 6px;
+        width: 36px;
+        height: 36px;
+    }
+
+    /* Hero Section */
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .hero-visual {
+        order: -1;
+    }
+
+    .avatar-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .avatar-ring {
+        width: 150px;
+        height: 150px;
+    }
+
+    .avatar-core {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Sections */
+    section {
+        padding: var(--spacing-xxxl) 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* About Section */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .about-image {
+        height: 300px;
+    }
+
+    .content-wrapper {
+        padding: var(--spacing-lg);
+    }
+
+    .personal-info {
+        grid-template-columns: 1fr;
+    }
+
+    .facts-list {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline {
+        padding-left: var(--spacing-md);
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-dot {
+        left: -27px;
+    }
+
+    /* Skills Section */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    /* Portfolio Section */
+    .filter-buttons {
+        justify-content: center;
+        gap: var(--spacing-sm);
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .portfolio-item {
+        text-align: center;
+    }
+
+    .portfolio-meta {
+        justify-content: center;
+    }
+
+    /* Blog Section */
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .post-image {
+        height: 200px;
+    }
+
+    .post-date {
+        top: var(--spacing-sm);
+        left: var(--spacing-sm);
+    }
+
+    /* Contact Section */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .contact-form {
+        order: -1;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+
+    .footer-links ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-sm);
+    }
+
+    .footer-social {
+        margin-top: var(--spacing-md);
+    }
+
+    /* Scroll Indicator */
+    .scroll-indicator {
+        bottom: var(--spacing-md);
+    }
+}
+
+/* Tablet Styles (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    :root {
+        --spacing-md: 20px;
+        --spacing-lg: 28px;
+        --spacing-xl: 36px;
+        --spacing-xxl: 48px;
+        --spacing-xxxl: 64px;
+    }
+
+    /* Navigation */
+    .nav-container {
+        padding: 0 var(--spacing-lg);
+    }
+
+    .logo a {
+        font-size: 1.4rem;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: var(--spacing-md);
+    }
+
+    /* Hero Section */
+    .hero-content {
+        grid-template-columns: 1.5fr 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .avatar-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .avatar-ring {
+        width: 180px;
+        height: 180px;
+    }
+
+    .avatar-core {
+        width: 140px;
+        height: 140px;
+    }
+
+    /* About Section */
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-image {
+        height: 400px;
+    }
+
+    /* Skills Section */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Portfolio Section */
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Blog Section */
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .post-image {
+        height: 180px;
+    }
+}
+
+/* Desktop Styles (1024px - 1399px) */
+@media (min-width: 1024px) and (max-width: 1399px) {
+    :root {
+        --spacing-md: 24px;
+        --spacing-lg: 32px;
+        --spacing-xl: 40px;
+        --spacing-xxl: 56px;
+        --spacing-xxxl: 80px;
+    }
+
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+
+    /* Hero Section */
+    .hero-content {
+        grid-template-columns: 2fr 1fr;
+        gap: var(--spacing-xxl);
+    }
+
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .avatar-container {
+        width: 280px;
+        height: 280px;
+    }
+
+    .avatar-ring {
+        width: 190px;
+        height: 190px;
+    }
+
+    .avatar-core {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Portfolio Section */
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Blog Section */
+    .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .post-image {
+        height: 220px;
+    }
+}
+
+/* Large Desktop Styles (1400px+) */
+@media (min-width: 1400px) {
+    :root {
+        --spacing-md: 24px;
+        --spacing-lg: 32px;
+        --spacing-xl: 48px;
+        --spacing-xxl: 64px;
+        --spacing-xxxl: 96px;
+    }
+
+    .container {
+        padding: 0 var(--spacing-xl);
+    }
+
+    /* Hero Section */
+    .hero-content {
+        max-width: 1600px;
+    }
+
+    .hero-title {
+        font-size: 5rem;
+    }
+
+    .avatar-container {
+        width: 320px;
+        height: 320px;
+    }
+
+    .avatar-ring {
+        width: 210px;
+        height: 210px;
+    }
+
+    .avatar-core {
+        width: 170px;
+        height: 170px;
+    }
+
+    /* Enhanced floating elements for larger screens */
+    .element-1 {
+        width: 250px;
+        height: 250px;
+        top: -120px;
+        right: -120px;
+    }
+
+    .element-2 {
+        width: 180px;
+        height: 180px;
+        bottom: -90px;
+        left: -90px;
+    }
+
+    .element-3 {
+        width: 120px;
+        height: 120px;
+        top: 50%;
+        right: -60px;
+    }
+
+    .element-4 {
+        width: 140px;
+        height: 140px;
+        bottom: 20%;
+        left: -70px;
+    }
+}
+
+/* High DPI/Retina Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .btn::before {
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    }
+
+    .avatar-glow {
+        filter: blur(25px);
+    }
+
+    .floating-element {
+        filter: blur(25px);
+    }
+}
+
+/* Dark Mode Specific Responsive Adjustments */
+@media (prefers-color-scheme: dark) and (max-width: 767px) {
+    .hero {
+        background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    }
+
+    .about {
+        background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    }
+
+    .skills {
+        background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    }
+}
+
+/* Light Mode Specific Responsive Adjustments */
+@media (prefers-color-scheme: light) and (max-width: 767px) {
+    .hero {
+        background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    }
+
+    .about {
+        background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    }
+
+    .skills {
+        background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    nav, .mobile-menu, .scroll-indicator, .back-to-top {
+        display: none !important;
+    }
+
+    section {
+        page-break-inside: avoid;
+        padding: 20px 0;
+    }
+
+    .container {
+        max-width: none;
+        padding: 0;
+    }
+
+    .btn {
+        display: none;
+    }
+
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    .hero-visual, .floating-elements, .avatar-container {
+        display: none;
+    }
+
+    .skills-grid, .tech-icons {
+        display: block;
+    }
+
+    .skill-progress {
+        width: 100% !important;
+    }
+}
+
+/* Accessibility Enhancements for Small Screens */
+@media (max-width: 480px) {
+    .btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+
+    .filter-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+
+    .portfolio-item .portfolio-meta {
+        font-size: 0.8rem;
+    }
+
+    .post-date {
+        font-size: 0.7rem;
+    }
+
+    .reading-time {
+        font-size: 0.75rem;
+    }
+
+    .contact-item {
+        padding: 12px;
+    }
+
+    .footer-links ul li {
+        font-size: 0.9rem;
+    }
+}
+
+/* Landscape Mobile */
+@media (max-width: 767px) and (orientation: landscape) {
+    .hero-content {
+        grid-template-columns: 1.2fr 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Portrait Mobile */
+@media (max-width: 767px) and (orientation: portrait) {
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablet Landscape */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+    .hero-content {
+        grid-template-columns: 1.8fr 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablet Portrait */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+    .hero-content {
+        grid-template-columns: 1.5fr 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Reduced Motion for Mobile */
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .floating, .bobbing, .drifting, .swaying, .wobbling {
+        animation: none !important;
+    }
+
+    .hero-title {
+        animation: none !important;
+    }
+
+    .avatar-core {
+        animation: none !important;
+    }
+}
+
+/* Touch-friendly adjustments */
+@media (hover: none) and (pointer: coarse) {
+    .btn {
+        min-height: 44px;
+        padding: 14px 24px;
+    }
+
+    .nav-link {
+        padding: 12px 16px;
+        min-height: 44px;
+    }
+
+    .filter-btn {
+        min-height: 40px;
+        padding: 10px 16px;
+    }
+
+    .theme-btn {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .menu-btn {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .portfolio-item {
+        min-height: 200px;
+    }
+
+    .post-image {
+        min-height: 160px;
+    }
+}

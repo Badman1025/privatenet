@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>枫的主页 | 个人娱乐收藏站</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/entertainment.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loading-text">
+                <span>加</span>
+                <span>载</span>
+                <span>中</span>
+                <span>.</span>
+                <span>.</span>
+                <span>.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cursor Customization -->
+    <div id="cursor">
+        <div id="cursor-dot"></div>
+        <div id="cursor-ring"></div>
+    </div>
+
+    <!-- Header with Personal Info -->
+    <header id="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="user-info">
+                    <div class="avatar-container">
+                        <div class="avatar-ring">
+                            <div class="avatar-core">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-details">
+                        <h1 class="user-name">枫的主页</h1>
+                        <p class="user-signature">收藏生活中的美好瞬间</p>
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <button id="theme-toggle" class="theme-btn" aria-label="切换主题">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="menu-toggle" class="menu-btn" aria-label="打开菜单">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- 今日好心情 Section -->
+        <section id="daily-recommendation" class="daily-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-star"></i>
+                        今日好心情
+                    </h2>
+                    <p class="section-subtitle" id="current-time">正在加载时间...</p>
+                    <div class="weather-sidebar">
+                        <p class="weather-info" id="current-weather">🌤️ 天气数据加载中...</p>
+                    </div>
+                </div>
+                
+                <div class="recommendation-grid">
+                    <!-- 摩羯座运势推荐 -->
+                    <div class="recommendation-card zodiac-card">
+                        <div class="recommendation-content">
+                            <div class="recommendation-icon">
+                            <img src="assets/images/mojie.png" alt="运势" class="site-icon">
+                            </div>
+                            <div class="recommendation-info">
+                            <h3>摩羯座今日运势</h3>
+                            <div class="fortune-icons">
+                                <span class="caishen-icon" title="财神爷">🧧</span>
+                            </div>
+                                <p>了解今日运势，规划美好生活</p>
+                                <div class="recommendation-meta">
+                                    <span class="rec-category">♈️ 星座</span>
+                                    <span class="rec-rating">🔆 今日</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recommendation-actions">
+                            <button class="btn btn-secondary rec-music-btn" onclick="window.open('https://www.xzw.com/fortune/capricorn/', '_blank')">
+                                <i class="fas fa-music"></i> 今日运势
+                            </button>
+                            <button class="btn btn-primary rec-kimi-btn" onclick="window.open('https://www.kimi.com/', '_blank')">
+                                <span class="caishen-icon">💞</span> Kimi
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 酷狗播放器推荐 -->
+                    <div class="recommendation-card music-card">
+                        <div class="recommendation-content">
+                            <div class="recommendation-icon">
+                                <i class="fas fa-headphones"></i>
+                            </div>
+                            <div class="recommendation-info">
+                                <h3>酷狗音乐</h3>
+                                <p>海量音乐库，在线听歌</p>
+                                <div class="recommendation-meta">
+                                    <span class="rec-category">🎵 音乐</span>
+                                    <span class="rec-rating">⭐ 推荐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recommendation-actions">
+                            <button class="btn btn-secondary rec-music-btn" onclick="window.open('https://www.kugou.com/', '_blank')">
+                                <i class="fas fa-music"></i> 在线听歌
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 娱乐类快捷入口 -->
+        <section id="entertainment-section" class="category-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-gamepad"></i>
+                        娱乐类
+                    </h2>
+                    <p class="section-subtitle">视频、娱乐休闲</p>
+                </div>
+                
+                <div class="category-grid">
+                    <div class="quick-card" onclick="window.open('https://www.ddjhd.cc/', '_blank')">
+                        <div class="quick-icon">
+                            <img src="assets/images/dandanjv.png" alt="蛋蛋剧" class="site-icon">
+                        </div>
+                        <div class="quick-info">
+                            <h4>蛋蛋剧</h4>
+                            <p>视频影视平台</p>
+                        </div>
+                        <div class="quick-badge">🎬</div>
+                    </div>
+                    
+                    <div class="quick-card" onclick="window.open('https://www.dadaqu.cc/', '_blank')">
+                        <div class="quick-icon">
+                            <img src="assets/images/dadaqu.png" alt="达达趣" class="site-icon">
+                        </div>
+                        <div class="quick-info">
+                            <h4>达达趣</h4>
+                            <p>娱乐休闲平台</p>
+                        </div>
+                        <div class="quick-badge">🎮</div>
+                    </div>
+                    
+                    <div class="quick-card" onclick="window.open('https://www.bilibili.com/', '_blank')">
+                        <div class="quick-icon">
+                            <img src="assets/images/bilibli.png" alt="Bilibili" class="site-icon">
+                        </div>
+                        <div class="quick-info">
+                            <h4>Bilibili</h4>
+                            <p>哔哩哔哩</p>
+                        </div>
+                        <div class="quick-badge">📺</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 工具类快捷入口 -->
+        <section id="tools-section" class="category-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-tools"></i>
+                        工具类
+                    </h2>
+                    <p class="section-subtitle">软件学习、PDF处理、实用工具</p>
+                </div>
+                
+                <div class="category-grid">
+                    <div class="quick-card" onclick="window.open('https://www.xue51.com/', '_blank')">
+                        <div class="quick-icon">
+                            <img src="assets/images/xuetang.png" alt="软件学堂" class="site-icon">
+                        </div>
+                        <div class="quick-info">
+                            <h4>软件学堂</h4>
+                            <p>软件学习平台</p>
+                        </div>
+                        <div class="quick-badge">💻</div>
+                    </div>
+                    
+                    <div class="quick-card" onclick="window.open('https://tools.pdf24.org/zh/all-tools', '_blank')">
+                        <div class="quick-icon">
+                            <img src="assets/images/PDF24.png" alt="PDF24" class="site-icon">
+                        </div>
+                        <div class="quick-info">
+                            <h4>PDF24</h4>
+                            <p>PDF工具集合</p>
+                        </div>
+                        <div class="quick-badge">📄</div>
+                    </div>
+                    
+                    <div class="quick-card" onclick="window.open('https://www.cleverpdf.com/cn', '_blank')">
+                        <div class="quick-icon">
+                            <img src="assets/images/clever.png" alt="CleverPDF" class="site-icon">
+                        </div>
+                        <div class="quick-info">
+                            <h4>CleverPDF</h4>
+                            <p>PDF处理工具</p>
+                        </div>
+                        <div class="quick-badge">🛠️</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 科研类快捷入口 -->
+        <section id="research-section" class="category-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-microscope"></i>
+                        科研类
+                    </h2>
+                    <p class="section-subtitle">代码托管、学术资源、生物信息、科研绘图</p>
+                </div>
+                
+                <div class="category-grid">
+                    <div class="quick-card" onclick="window.open('https://github.com/Badman1025', '_blank')">
+                        <div class="quick-icon">
+                            <img src="assets/images/github.png" alt="GitHub" class="site-icon">
+                        </div>
+                        <div class="quick-info">
+                            <h4>GitHub</h4>
+                            <p>代码托管平台</p>
+                        </div>
+                        <div class="quick-badge">💻</div>
+                    </div>
+                    
+                    <div class="quick-card" onclick="window.open('https://scholar.rjmart.cn/', '_blank')">
+                        <div class="quick-icon">
+                            <img src="assets/images/ruijing.png" alt="锐竞学术" class="site-icon">
+                        </div>
+                        <div class="quick-info">
+                            <h4>锐竞学术</h4>
+                            <p>学术资源搜索</p>
+                        </div>
+                        <div class="quick-badge">🎓</div>
+                    </div>
+                    
+                    <div class="quick-card" onclick="window.open('https://ibs.renlab.org/#/home', '_blank')">
+                        <div class="quick-icon">
+                            <img src="assets/images/IBS.png" alt="IBS 2.0" class="site-icon">
+                        </div>
+                        <div class="quick-info">
+                            <h4>IBS 2.0</h4>
+                            <p>生物信息工具</p>
+                        </div>
+                        <div class="quick-badge">🔬</div>
+                    </div>
+                    
+                    <div class="quick-card" onclick="window.open('https://www.biorender.com/', '_blank')">
+                        <div class="quick-icon">
+                            <img src="assets/images/biorender.png" alt="Biorender" class="site-icon">
+                        </div>
+                        <div class="quick-info">
+                            <h4>Biorender</h4>
+                            <p>科研绘图工具</p>
+                        </div>
+                        <div class="quick-badge">🎨</div>
+                    </div>
+                    
+                    <div class="quick-card" onclick="window.open('https://biogdp.com/', '_blank')">
+                        <div class="quick-icon">
+                            <img src="assets/images/biogdp.png" alt="BioGDP" class="site-icon">
+                        </div>
+                        <div class="quick-info">
+                            <h4>BioGDP</h4>
+                            <p>生物数据分析</p>
+                        </div>
+                        <div class="quick-badge">📊</div>
+                    </div>
+                    
+                    <div class="quick-card" onclick="window.open('https://www.freepik.com/', '_blank')">
+                        <div class="quick-icon">
+                            <img src="assets/images/huitu.png" alt="FreePik" class="site-icon">
+                        </div>
+                        <div class="quick-info">
+                            <h4>科研图片</h4>
+                            <p>图片素材资源</p>
+                        </div>
+                        <div class="quick-badge">🖼️</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 管理类快捷入口 -->
+        <section id="management-section" class="category-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-cog"></i>
+                        管理类
+                    </h2>
+                    <p class="section-subtitle">公众号管理、文档管理、云文档</p>
+                </div>
+                
+                <div class="category-grid">
+                    <div class="quick-card" onclick="window.open('https://mp.weixin.qq.com/', '_blank')">
+                        <div class="quick-icon">
+                            <img src="assets/images/wechat.png" alt="微信公众平台" class="site-icon">
+                        </div>
+                        <div class="quick-info">
+                            <h4>微信公众平台</h4>
+                            <p>公众号管理</p>
+                        </div>
+                        <div class="quick-badge">📱</div>
+                    </div>
+                    
+                    <div class="quick-card" onclick="window.open('https://doc.wzfj.cc/', '_blank')">
+                        <div class="quick-icon">
+                            <img src="assets/images/wzfj.png" alt="微附件X" class="site-icon">
+                        </div>
+                        <div class="quick-info">
+                            <h4>微附件X</h4>
+                            <p>文档管理工具</p>
+                        </div>
+                        <div class="quick-badge">📋</div>
+                    </div>
+                    
+                    <div class="quick-card" onclick="window.open('https://doc.uomo.cc/', '_blank')">
+                        <div class="quick-icon">
+                            <img src="assets/images/WEI.png" alt="微附件" class="site-icon">
+                        </div>
+                        <div class="quick-info">
+                            <h4>微附件</h4>
+                            <p>云文档管理</p>
+                        </div>
+                        <div class="quick-badge">☁️</div>
+                    </div>
+
+                    <div class="quick-card" onclick="window.open('https://digitalplat.org/', '_blank')">
+                        <div class="quick-icon">
+                            <img src="assets/images/digitalplat.png" alt="digitalplat平台" class="site-icon">
+                        </div>
+                        <div class="quick-info">
+                            <h4>digitalplat平台</h4>
+                            <p>域名管理-Le</p>
+                        </div>
+                        <div class="quick-badge">🌐</div>
+                    </div>
+
+                    <div class="quick-card" onclick="window.open('https://dash.cloudflare.com/', '_blank')">
+                        <div class="quick-icon">
+                            <img src="assets/images/cloudflare.png" alt="CloudFlare" class="site-icon">
+                        </div>
+                        <div class="quick-info">
+                            <h4>CloudFlare官网</h4>
+                            <p>域名托管-github</p>
+                        </div>
+                        <div class="quick-badge">🌐</div>
+                    </div>
+
+                    <div class="quick-card" onclick="window.open('https://apa-early-embryo-development.cn/', '_blank')">
+                        <div class="quick-icon">
+                            <img src="assets/images/APA.png" alt="CloudFlare" class="site-icon">
+                        </div>
+                        <div class="quick-info">
+                            <h4>APA数据库</h4>
+                            <p>着床前胚胎发育APA资源</p>
+                        </div>
+                        <div class="quick-badge">🌐</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3 id="caishen-title">恭喜发财💰</h3>
+                    <p>私人娱乐收藏站 | 记录生活中的美好</p>
+                    <div class="caishen-container">
+                        <img src="assets/images/财神.png" alt="财神爷" class="caishen-image">
+                    </div>
+                    <div class="footer-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">156</span>
+                            <span class="stat-label">收藏链接</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">89</span>
+                            <span class="stat-label">个人记录</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24</span>
+                            <span class="stat-label">实用工具</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-actions">
+                    <!-- 导入导出功能已删除 -->
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mr. Zhang. 侵权联系删除: zy2023023069@stu.imust.edu.cn.</p>
+                <div class="footer-credits">
+                    <span>Made with</span>
+                    <i class="fas fa-heart"></i>
+                    <span>for personal use</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-user">
+                <div class="mobile-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="mobile-user-info">
+                    <h3>枫的主页</h3>
+                    <p>收藏生活中的美好瞬间</p>
+                </div>
+            </div>
+            <div class="mobile-links">
+                <a href="#daily-recommendation" class="mobile-link">今日好心情</a>
+                <a href="#entertainment-section" class="mobile-link">娱乐类</a>
+                <a href="#tools-section" class="mobile-link">工具类</a>
+                <a href="#research-section" class="mobile-link">科研类</a>
+                <a href="#management-section" class="mobile-link">管理类</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/entertainment.js"></script>
+</body>
+</html>

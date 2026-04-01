@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrivateNet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="m-0 p-0">
+  <div class="relative hidden lg:flex flex-col justify-between bg-gradient-to-br from-gray-400 via-gray-500 to-gray-600 dark:from-white/90 dark:via-white/80 dark:to-white/70 p-12 text-white dark:text-gray-900">
+    <div class="relative z-20 flex items-end justify-center h-[500px]">
+      <div class="relative" style="width:550px;height:400px">
+        
+        <!-- 人物1 -->
+        <div id="person1" class="absolute bottom-0 transition-all duration-700 ease-in-out" style="left: 70px; width: 180px; height: 400px; background-color: rgb(108, 63, 245); border-radius: 10px 10px 0px 0px; z-index: 1; transform: skewX(0deg); transform-origin: center bottom;">
+          <div class="absolute flex gap-8 transition-all duration-700 ease-in-out" id="eye1" style="left: 20px; top: 35px;">
+            <div class="rounded-full flex items-center justify-center transition-all duration-150" style="width: 18px; height: 18px; background-color: white; overflow: hidden;" id="eye1-1">
+              <div class="rounded-full" style="width: 7px; height: 7px; background-color: rgb(45, 45, 45); transform: translate(4px, 5px); transition: transform 0.1s ease-out;"></div>
+            </div>
+            <div class="rounded-full flex items-center justify-center transition-all duration-150" style="width: 18px; height: 18px; background-color: white; overflow: hidden;" id="eye1-2">
+              <div class="rounded-full" style="width: 7px; height: 7px; background-color: rgb(45, 45, 45); transform: translate(4px, 5px); transition: transform 0.1s ease-out;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 人物2 -->
+        <div id="person2" class="absolute bottom-0 transition-all duration-700 ease-in-out" style="left: 240px; width: 120px; height: 310px; background-color: rgb(45, 45, 45); border-radius: 8px 8px 0px 0px; z-index: 2; transform: skewX(0deg); transform-origin: center bottom;">
+          <div class="absolute flex gap-6 transition-all duration-700 ease-in-out" id="eye2" style="left: 10px; top: 28px;">
+            <div class="rounded-full flex items-center justify-center transition-all duration-150" style="width: 16px; height: 16px; background-color: white; overflow: hidden;" id="eye2-3">
+              <div class="rounded-full" style="width: 6px; height: 6px; background-color: rgb(45, 45, 45); transform: translate(-4px, -4px); transition: transform 0.1s ease-out;"></div>
+            </div>
+            <div class="rounded-full flex items-center justify-center transition-all duration-150" style="width: 16px; height: 16px; background-color: white; overflow: hidden;" id="eye2-4">
+              <div class="rounded-full" style="width: 6px; height: 6px; background-color: rgb(45, 45, 45); transform: translate(-4px, -4px); transition: transform 0.1s ease-out;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 人物3 -->
+        <div id="person3" class="absolute bottom-0 transition-all duration-700 ease-in-out" style="left: 0px; width: 240px; height: 200px; z-index: 3; background-color: rgb(255, 155, 107); border-radius: 120px 120px 0px 0px; transform: skewX(0deg); transform-origin: center bottom;">
+          <div class="absolute flex gap-8 transition-all duration-200 ease-out" id="eye5" style="left: 50px; top: 85px;">
+            <div class="rounded-full" style="width: 12px; height: 12px; background-color: rgb(45, 45, 45); transform: translate(-5px, -4px); transition: transform 0.1s ease-out;"></div>
+            <div class="rounded-full" style="width: 12px; height: 12px; background-color: rgb(45, 45, 45); transform: translate(-5px, -4px); transition: transform 0.1s ease-out;"></div>
+          </div>
+        </div>
+
+        <!-- 人物4 -->
+        <div id="person4" class="absolute bottom-0 transition-all duration-700 ease-in-out" style="left: 310px; width: 140px; height: 230px; background-color: rgb(232, 215, 84); border-radius: 70px 70px 0px 0px; z-index: 4; transform: skewX(0deg); transform-origin: center bottom;">
+          <div class="absolute flex gap-6 transition-all duration-200 ease-out" id="eye6" style="left: 20px; top: 35px;">
+            <div class="rounded-full" style="width: 12px; height: 12px; background-color: rgb(45, 45, 45); transform: translate(-5px, -4px); transition: transform 0.1s ease-out;"></div>
+            <div class="rounded-full" style="width: 12px; height: 12px; background-color: rgb(45, 45, 45); transform: translate(-5px, -4px); transition: transform 0.1s ease-out;"></div>
+          </div>
+          <div class="absolute w-20 h-[4px] bg-[#2D2D2D] rounded-full transition-all duration-200 ease-out" id="eye6-1" style="left: 10px; top: 88px;"></div>
+        </div>
+
+      </div>
+    </div>
+
+  <div class="absolute inset-0 bg-grid-white/[0.05] bg-[size:20px_20px]"></div>
+  <div class="absolute top-1/4 right-1/4 size-64 bg-gray-400/20 dark:bg-gray-300/30 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-1/4 left-1/4 size-96 bg-gray-300/20 dark:bg-gray-200/20 rounded-full blur-3xl"></div>
+  
+  <!-- 标题 -->
+  <div class="absolute top-8 left-1/2 -translate-x-1/2 text-center z-30">
+    <h1 class="text-4xl font-bold text-white dark:text-gray-900 drop-shadow-lg">欢迎来到安乐窝</h1>
+    <p class="mt-2 text-lg text-white/80 dark:text-gray-700">娱乐之旅启程🚴</p>
+  </div>
+  
+  <!-- 装饰星星 -->
+  <div class="absolute top-20 left-20 z-10 animate-pulse">
+    <div class="text-3xl">⭐</div>
+  </div>
+  <div class="absolute top-32 right-32 z-10 animate-pulse" style="animation-delay: 0.5s;">
+    <div class="text-2xl">✨</div>
+  </div>
+  <div class="absolute top-16 right-20 z-10 animate-pulse" style="animation-delay: 1s;">
+    <div class="text-2xl">🌟</div>
+  </div>
+  <div class="absolute bottom-40 left-16 z-10 animate-pulse" style="animation-delay: 0.3s;">
+    <div class="text-xl">💫</div>
+  </div>
+  <div class="absolute bottom-48 right-16 z-10 animate-pulse" style="animation-delay: 0.7s;">
+    <div class="text-2xl">🌈</div>
+  </div>
+  
+  <!-- 云朵装饰 -->
+  <div class="absolute top-24 left-1/4 z-10 opacity-60">
+    <div class="text-5xl">☁️</div>
+  </div>
+  <div class="absolute top-16 left-3/4 z-10 opacity-40">
+    <div class="text-4xl">☁️</div>
+  </div>
+  
+  <!-- 页脚信息 -->
+  <div class="absolute bottom-2 left-1/2 -translate-x-1/2 text-center z-30">
+    <p class="text-sm text-white/60 dark:text-gray-600">© 2026 PrivateNet</p>
+  </div>
+  
+  <!-- Enter Button -->
+  <div class="absolute right-8 bottom-8 z-50">
+    <a href="./index.html" class="px-8 py-3 bg-white text-gray-800 font-semibold rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg cursor-pointer inline-block">
+      Enter
+    </a>
+  </div>
+  </div>
+
+<script>
+// 眼睛跟随鼠标
+function draw1(id, mouseX, mouseY) {
+  let rect = document.getElementById(id);
+  const centerX = rect.offsetLeft + rect.clientWidth / 2;
+  const centerY = rect.offsetTop + rect.clientHeight / 2;
+  let angle = Math.atan2(mouseY - centerY, mouseX - centerX);
+  let dist = Math.min(Math.sqrt((mouseX - centerX) ** 2 + (mouseY - centerY) ** 2), 5);
+  
+  rect.innerHTML = `<div class="rounded-full" style="width:7px;height:7px;background-color:rgb(45,45,45);transform:translate(${Math.cos(angle) * dist}px,${Math.sin(angle) * dist}px);transition:transform 0.1s ease-out"></div>`;
+}
+
+// 眼球左右移动
+function draw2(id, mouseX, mouseY, min, max) {
+  let rect = document.getElementById(id);
+  let w = document.body.clientWidth / 2;
+  if (mouseX < w) {
+    rect.style.left = min + 'px';
+  } else {
+    rect.style.left = max + 'px';
+  }
+}
+
+// 眨眼睛
+function draw4(id1, id2, min, max, f) {
+  let rect1 = document.getElementById(id1);
+  let rect2 = document.getElementById(id2);
+  if (f) {
+    rect1.style.height = max + 'px';
+    rect2.style.height = max + 'px';
+    blinking();
+  } else {
+    rect1.style.height = min + 'px';
+    rect2.style.height = min + 'px';
+    setTimeout(function () {
+      draw4(id1, id2, min, max, 1);
+    }, 200);
+  }
+}
+
+// 随机时间
+function getRandom() {
+  return Math.floor(Math.random() * 2001 + 2000);
+}
+
+// 随机眨眼
+function blinking() {
+  setTimeout(function () {
+    draw4('eye1-1', 'eye1-2', 2, 18);
+  }, getRandom());
+}
+blinking();
+
+// 鼠标移动监听
+const handleMove = (e) => {
+  let mouseX = e.clientX;
+  let mouseY = e.clientY;
+  draw2('eye1', mouseX, mouseY, 20, 80);
+  draw1('eye1-1', mouseX, mouseY);
+  draw1('eye1-2', mouseX, mouseY);
+  draw2('eye2', mouseX, mouseY, 10, 40);
+  draw1('eye2-3', mouseX, mouseY);
+  draw1('eye2-4', mouseX, mouseY);
+  draw2('eye5', mouseX, mouseY, 40, 140);
+  draw2('eye6', mouseX, mouseY, 20, 70);
+  draw2('eye6-1', mouseX, mouseY, 10, 50);
+};
+window.addEventListener("mousemove", handleMove);
+
+// 点击踮脚动画
+var inum = 0;
+function bodyStyle() {
+  inum++;
+  if (inum % 3 === 0) {
+    return 'transform:skewX(0deg)';
+  }
+  if (inum % 5 === 0) {
+    return 'transform:skewX(-9deg) translateX(40px);height:440px';
+  }
+  if (inum % 4 === 0) {
+    return 'height:440px';
+  }
+  return 'transform:skewX(-9deg)';
+}
+
+function clickView(e) {
+  // 如果点击的是按钮，不触发踮脚动画
+  if (e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+    return;
+  }
+  let style = bodyStyle();
+  document.getElementById("person1").setAttribute('style', "left: 70px; width: 180px; height: 400px; background-color: rgb(108, 63, 245); border-radius: 10px 10px 0px 0px; z-index: 1; transform-origin: center bottom;" + style);
+  
+  if (style.indexOf('translateX') > -1) {
+    document.getElementById("eye1").style.left = "80px";
+  } else {
+    document.getElementById("eye1").style.left = "20px";
+  }
+}
+document.addEventListener("click", clickView);
+</script>
+</body>
+</html>

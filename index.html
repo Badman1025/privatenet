@@ -6,9 +6,51 @@
   <title>PrivateNet</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="m-0 p-0">
-  <div class="relative hidden lg:flex flex-col justify-between bg-gradient-to-br from-gray-400 via-gray-500 to-gray-600 dark:from-white/90 dark:via-white/80 dark:to-white/70 p-12 text-white dark:text-gray-900">
-    <div class="relative z-20 flex items-end justify-center h-[500px]">
+  <body class="m-0 p-0 overflow-x-hidden">
+  <!-- 主内容区域 - 适配所有设备 -->
+  <div class="relative flex flex-col justify-between bg-gradient-to-br from-gray-400 via-gray-500 to-gray-600 dark:from-white/90 dark:via-white/80 dark:to-white/70 p-4 md:p-8 lg:p-12 text-white dark:text-gray-900 min-h-screen">
+    <!-- 标题 - 移动端优化 -->
+    <div class="absolute top-4 left-1/2 -translate-x-1/2 text-center z-30">
+      <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white dark:text-gray-900 drop-shadow-lg">欢迎来到安乐窝</h1>
+      <p class="mt-1 sm:mt-2 text-sm sm:text-base md:text-lg text-white/80 dark:text-gray-700">娱乐之旅启程🚴</p>
+    </div>
+    
+    <!-- 移动端人物装饰 - 小尺寸适配 -->
+    <div class="flex lg:hidden flex-col items-center justify-center flex-1 pt-16 pb-4">
+      <div class="relative" style="width: 280px; height: 200px;">
+        <!-- 移动端人物1 -->
+        <div class="absolute bottom-0" style="left: 35px; width: 90px; height: 200px; background-color: rgb(108, 63, 245); border-radius: 5px 5px 0px 0px;">
+          <div class="absolute flex gap-4" style="left: 10px; top: 18px;">
+            <div class="rounded-full" style="width: 9px; height: 9px; background-color: white;"></div>
+            <div class="rounded-full" style="width: 9px; height: 9px; background-color: white;"></div>
+          </div>
+        </div>
+        <!-- 移动端人物2 -->
+        <div class="absolute bottom-0" style="left: 120px; width: 60px; height: 155px; background-color: rgb(45, 45, 45); border-radius: 4px 4px 0px 0px;">
+          <div class="absolute flex gap-3" style="left: 5px; top: 14px;">
+            <div class="rounded-full" style="width: 8px; height: 8px; background-color: white;"></div>
+            <div class="rounded-full" style="width: 8px; height: 8px; background-color: white;"></div>
+          </div>
+        </div>
+        <!-- 移动端人物3 -->
+        <div class="absolute bottom-0" style="left: 0px; width: 120px; height: 100px; background-color: rgb(255, 155, 107); border-radius: 60px 60px 0px 0px;">
+          <div class="absolute flex gap-4" style="left: 25px; top: 42px;">
+            <div class="rounded-full" style="width: 6px; height: 6px; background-color: rgb(45, 45, 45);"></div>
+            <div class="rounded-full" style="width: 6px; height: 6px; background-color: rgb(45, 45, 45);"></div>
+          </div>
+        </div>
+        <!-- 移动端人物4 -->
+        <div class="absolute bottom-0" style="left: 155px; width: 70px; height: 115px; background-color: rgb(232, 215, 84); border-radius: 35px 35px 0px 0px;">
+          <div class="absolute flex gap-3" style="left: 10px; top: 18px;">
+            <div class="rounded-full" style="width: 6px; height: 6px; background-color: rgb(45, 45, 45);"></div>
+            <div class="rounded-full" style="width: 6px; height: 6px; background-color: rgb(45, 45, 45);"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 桌面端人物展示 -->
+    <div class="hidden lg:flex relative z-20 items-end justify-center h-[500px]">
       <div class="relative" style="width:550px;height:400px">
         
         <!-- 人物1 -->
@@ -59,44 +101,61 @@
   <div class="absolute top-1/4 right-1/4 size-64 bg-gray-400/20 dark:bg-gray-300/30 rounded-full blur-3xl"></div>
   <div class="absolute bottom-1/4 left-1/4 size-96 bg-gray-300/20 dark:bg-gray-200/20 rounded-full blur-3xl"></div>
   
-  <!-- 标题 -->
-  <div class="absolute top-8 left-1/2 -translate-x-1/2 text-center z-30">
-    <h1 class="text-4xl font-bold text-white dark:text-gray-900 drop-shadow-lg">欢迎来到安乐窝</h1>
-    <p class="mt-2 text-lg text-white/80 dark:text-gray-700">娱乐之旅启程🚴</p>
+  <!-- 移动端装饰星星 - 仅在移动端显示 -->
+  <div class="absolute top-16 left-4 z-10 animate-pulse lg:hidden">
+    <div class="text-2xl">⭐</div>
+  </div>
+  <div class="absolute top-20 right-4 z-10 animate-pulse lg:hidden" style="animation-delay: 0.5s;">
+    <div class="text-xl">✨</div>
+  </div>
+  <div class="absolute bottom-32 left-4 z-10 animate-pulse lg:hidden" style="animation-delay: 1s;">
+    <div class="text-xl">🌟</div>
   </div>
   
-  <!-- 装饰星星 -->
-  <div class="absolute top-20 left-20 z-10 animate-pulse">
+  <!-- 桌面端装饰星星 - 仅在桌面端显示 -->
+  <div class="hidden lg:block absolute top-20 left-20 z-10 animate-pulse">
     <div class="text-3xl">⭐</div>
   </div>
-  <div class="absolute top-32 right-32 z-10 animate-pulse" style="animation-delay: 0.5s;">
+  <div class="hidden lg:block absolute top-32 right-32 z-10 animate-pulse" style="animation-delay: 0.5s;">
     <div class="text-2xl">✨</div>
   </div>
-  <div class="absolute top-16 right-20 z-10 animate-pulse" style="animation-delay: 1s;">
+  <div class="hidden lg:block absolute top-16 right-20 z-10 animate-pulse" style="animation-delay: 1s;">
     <div class="text-2xl">🌟</div>
   </div>
-  <div class="absolute bottom-40 left-16 z-10 animate-pulse" style="animation-delay: 0.3s;">
+  <div class="hidden lg:block absolute bottom-40 left-16 z-10 animate-pulse" style="animation-delay: 0.3s;">
     <div class="text-xl">💫</div>
   </div>
-  <div class="absolute bottom-48 right-16 z-10 animate-pulse" style="animation-delay: 0.7s;">
+  <div class="hidden lg:block absolute bottom-48 right-16 z-10 animate-pulse" style="animation-delay: 0.7s;">
     <div class="text-2xl">🌈</div>
   </div>
   
-  <!-- 云朵装饰 -->
-  <div class="absolute top-24 left-1/4 z-10 opacity-60">
+  <!-- 云朵装饰 - 移动端 -->
+  <div class="absolute top-20 left-4 z-10 opacity-60 lg:hidden">
+    <div class="text-3xl">☁️</div>
+  </div>
+  <!-- 云朵装饰 - 桌面端 -->
+  <div class="hidden lg:block absolute top-24 left-1/4 z-10 opacity-60">
     <div class="text-5xl">☁️</div>
   </div>
-  <div class="absolute top-16 left-3/4 z-10 opacity-40">
+  <div class="hidden lg:block absolute top-16 left-3/4 z-10 opacity-40">
     <div class="text-4xl">☁️</div>
   </div>
   
-  <!-- 页脚信息 -->
-  <div class="absolute bottom-2 left-1/2 -translate-x-1/2 text-center z-30">
+  <!-- 移动端页脚和按钮 -->
+  <div class="flex lg:hidden w-full justify-center items-center gap-4 pb-6 pt-4">
+    <p class="text-xs text-white/60 dark:text-gray-600">© 2026 PrivateNet</p>
+    <a href="./privatenet.html" class="px-6 py-2 bg-white text-gray-800 font-semibold rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg cursor-pointer text-sm">
+      Enter
+    </a>
+  </div>
+  
+  <!-- 桌面端页脚信息 -->
+  <div class="hidden lg:block absolute bottom-2 left-1/2 -translate-x-1/2 text-center z-30">
     <p class="text-sm text-white/60 dark:text-gray-600">© 2026 PrivateNet</p>
   </div>
   
-  <!-- Enter Button -->
-  <div class="absolute right-8 bottom-8 z-50">
+  <!-- 桌面端 Enter Button -->
+  <div class="hidden lg:block absolute right-8 bottom-8 z-50">
     <a href="./privatenet.html" class="px-8 py-3 bg-white text-gray-800 font-semibold rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg cursor-pointer inline-block">
       Enter
     </a>

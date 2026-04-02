@@ -267,6 +267,40 @@ body {
 @media (max-width: 767px) {
     .recommendation-grid {
         grid-template-columns: 1fr;
+        padding: 0 16px;
+    }
+    
+    .recommendation-card {
+        padding: 16px;
+        border-radius: 16px;
+    }
+    
+    .recommendation-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .recommendation-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .recommendation-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .recommendation-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .recommendation-actions .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 16px;
+        font-size: 0.85rem;
     }
 }
 
@@ -416,10 +450,37 @@ body {
     .category-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-sm);
+        padding: 0 12px;
     }
     
     .category-section {
         padding: var(--spacing-xl) 0;
+    }
+    
+    .quick-card {
+        padding: 12px;
+        border-radius: 10px;
+    }
+    
+    .quick-card img.site-icon {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+    }
+    
+    .quick-info h4 {
+        font-size: 0.85rem;
+        margin-bottom: 2px;
+    }
+    
+    .quick-info p {
+        font-size: 0.7rem;
+    }
+    
+    .quick-badge {
+        font-size: 1rem;
+        top: 6px;
+        right: 6px;
     }
 }
 

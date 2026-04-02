@@ -13,17 +13,20 @@
     }
   </style>
 </head>
-  <body class="h-full overflow-x-hidden bg-gradient-to-br from-gray-400 via-gray-500 to-gray-600 dark:from-white/90 dark:via-white/80 dark:to-white/70">
+  <body class="h-full overflow-x-hidden">
+  <!-- 背景层 -->
+  <div class="fixed inset-0 bg-gradient-to-br from-gray-400 via-gray-500 to-gray-600 dark:from-white/90 dark:via-white/80 dark:to-white/70 -z-10"></div>
+  
   <!-- 主内容区域 -->
-  <div class="relative w-full min-h-screen p-4 md:p-8 lg:p-12 text-white dark:text-gray-900">
+  <div class="relative w-full min-h-screen flex flex-col p-4 md:p-8 lg:p-12 text-white dark:text-gray-900">
     <!-- 标题 - 统一所有设备 -->
-    <div class="absolute top-4 left-1/2 -translate-x-1/2 text-center z-30">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 text-center z-30" style="transform: translate(-50%, -180px);">
       <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white dark:text-gray-900 drop-shadow-lg">欢迎来到安乐窝</h1>
       <p class="mt-1 sm:mt-2 text-sm sm:text-base md:text-lg text-white/80 dark:text-gray-700">娱乐之旅启程🚴</p>
     </div>
     
-    <!-- 人物展示 - 统一布局，通过scale适配 -->
-    <div class="relative z-20 flex items-end justify-center flex-1">
+    <!-- 人物展示 - 统一布局，通过scale适配，垂直居中 -->
+    <div class="relative z-20 flex items-center justify-center flex-1" style="margin-top: 60px;">
       <div class="relative persons-container" style="transform-origin: center bottom;">
         
         <!-- 人物1 -->

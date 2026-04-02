@@ -33,7 +33,10 @@
       .persons-container {
         width: 420px;
         height: 310px;
-        transform: translateY(-25px);
+        transform: translateY(-60px);
+      }
+      .relative.z-20.flex {
+        padding-top: 8vh;
       }
       #person1 { left: 52px !important; width: 138px !important; height: 304px !important; }
       #person2 { left: 182px !important; width: 91px !important; height: 236px !important; }
@@ -58,7 +61,7 @@
     </div>
     
     <!-- 人物展示 - 统一布局，通过scale适配，垂直居中 -->
-    <div class="relative z-20 flex items-center justify-center flex-1">
+    <div class="relative z-20 flex items-start justify-center flex-1" style="padding-top: 5vh;">
       <div class="relative persons-container" style="transform-origin: center center;">
         
         <!-- 人物1 -->

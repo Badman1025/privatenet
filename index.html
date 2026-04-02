@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="h-full">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PrivateNet</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
 </head>
-  <body class="m-0 p-0 overflow-x-hidden">
+  <body class="h-full overflow-x-hidden bg-gradient-to-br from-gray-400 via-gray-500 to-gray-600 dark:from-white/90 dark:via-white/80 dark:to-white/70">
   <!-- 主内容区域 -->
-  <div class="relative w-full min-h-screen bg-gradient-to-br from-gray-400 via-gray-500 to-gray-600 dark:from-white/90 dark:via-white/80 dark:to-white/70 p-4 md:p-8 lg:p-12 text-white dark:text-gray-900">
+  <div class="relative w-full min-h-screen p-4 md:p-8 lg:p-12 text-white dark:text-gray-900">
     <!-- 标题 - 统一所有设备 -->
     <div class="absolute top-4 left-1/2 -translate-x-1/2 text-center z-30">
       <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white dark:text-gray-900 drop-shadow-lg">欢迎来到安乐窝</h1>

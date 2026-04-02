@@ -414,49 +414,71 @@
       }
     }
     
-    /* 人物3眼睛 */
+    /* 人物3眼睛 - 黑色圆点眼睛 */
     .eye3-1, .eye3-2 {
+      position: absolute;
       width: 12px;
       height: 12px;
+      background-color: rgb(45, 45, 45);
+      border-radius: 50%;
     }
     
-    .eye3-1, .eye3-2 {
-      background-color: rgb(45, 45, 45);
-      transform: translate(-5px, -4px);
+    .eye3-1 {
+      left: 0;
+      top: 0;
+    }
+    
+    .eye3-2 {
+      left: 20px;
+      top: 0;
     }
     
     @media (max-width: 768px) {
       .eye3-1, .eye3-2 {
         width: 7px;
         height: 7px;
-        transform: translate(-3px, -2px);
+      }
+      .eye3-2 {
+        left: 11px;
       }
     }
     
     @media (max-width: 480px) {
       .eye3-1, .eye3-2 {
-        width: 6px;
-        height: 6px;
-        transform: translate(-2px, -2px);
+        width: 5px;
+        height: 5px;
+      }
+      .eye3-2 {
+        left: 8px;
       }
     }
     
-    /* 人物4眼睛 */
+    /* 人物4眼睛 - 黑色圆点眼睛 */
     .eye4-1, .eye4-2 {
+      position: absolute;
       width: 12px;
       height: 12px;
+      background-color: rgb(45, 45, 45);
+      border-radius: 50%;
     }
     
-    .eye4-1, .eye4-2 {
-      background-color: rgb(45, 45, 45);
-      transform: translate(-5px, -4px);
+    .eye4-1 {
+      left: 0;
+      top: 0;
+    }
+    
+    .eye4-2 {
+      left: 20px;
+      top: 0;
     }
     
     @media (max-width: 768px) {
       .eye4-1, .eye4-2 {
         width: 7px;
         height: 7px;
-        transform: translate(-3px, -2px);
+      }
+      .eye4-2 {
+        left: 11px;
       }
     }
     
@@ -464,7 +486,9 @@
       .eye4-1, .eye4-2 {
         width: 5px;
         height: 5px;
-        transform: translate(-2px, -1.5px);
+      }
+      .eye4-2 {
+        left: 8px;
       }
     }
     

@@ -457,7 +457,6 @@ function initAccessibility() {
     // Skip to main content link
     const skipLink = document.createElement('a');
     skipLink.href = '#main-content';
-    skipLink.textContent = 'Skip to main content';
     skipLink.className = 'skip-link';
     document.body.insertBefore(skipLink, document.body.firstChild);
     

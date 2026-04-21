@@ -3,7 +3,7 @@
  * Interactive functionality and user experience enhancements
  */
 
-// DOM Elements
+// DOM Elements with null checks
 const preloader = document.getElementById('preloader');
 const cursorDot = document.getElementById('cursor-dot');
 const cursorRing = document.getElementById('cursor-ring');
@@ -16,6 +16,9 @@ const backToTop = document.getElementById('back-to-top');
 const contactForm = document.getElementById('contactForm');
 const filterButtons = document.querySelectorAll('.filter-btn');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+// Add null checks for elements used in updateNavbarOnScroll
+const navbarExists = navbar !== null;
 
 // State Management
 let isDarkTheme = true;
@@ -41,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * Preloader Animation
  */
 function initPreloader() {
+    if (!preloader) return;
     // Simulate loading time
     setTimeout(() => {
         preloader.style.opacity = '0';
@@ -66,11 +70,13 @@ function initTheme() {
     updateTheme();
     
     // Theme toggle event listener
-    themeToggle.addEventListener('click', () => {
-        isDarkTheme = !isDarkTheme;
-        updateTheme();
-        localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
-    });
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            isDarkTheme = !isDarkTheme;
+            updateTheme();
+            localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+        });
+    }
     
     // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
@@ -85,9 +91,11 @@ function updateTheme() {
     document.documentElement.setAttribute('data-theme', isDarkTheme ? 'dark' : 'light');
     
     // Update theme toggle icon
-    themeToggle.innerHTML = isDarkTheme 
-        ? '<i class="fas fa-moon"></i>' 
-        : '<i class="fas fa-sun"></i>';
+    if (themeToggle) {
+        themeToggle.innerHTML = isDarkTheme 
+            ? '<i class="fas fa-moon"></i>' 
+            : '<i class="fas fa-sun"></i>';
+    }
     
     // Add theme transition class for smooth color changes
     document.body.classList.add('theme-transition');
@@ -165,9 +173,9 @@ function updateActiveNavOnScroll() {
 }
 
 function updateNavbarOnScroll() {
-    if (window.scrollY > 100) {
+    if (navbarExists && window.scrollY > 100) {
         navbar.classList.add('scrolled');
-    } else {
+    } else if (navbarExists) {
         navbar.classList.remove('scrolled');
     }
 }
@@ -176,6 +184,8 @@ function updateNavbarOnScroll() {
  * Mobile Menu
  */
 function initMobileMenu() {
+    if (!menuToggle || !mobileMenu) return;
+    
     menuToggle.addEventListener('click', toggleMobileMenu);
     
     // Close menu when clicking outside
@@ -195,6 +205,8 @@ function initMobileMenu() {
 }
 
 function toggleMobileMenu() {
+    if (!mobileMenu || !menuToggle) return;
+    
     mobileMenu.classList.toggle('active');
     menuToggle.classList.toggle('active');
     
@@ -214,6 +226,8 @@ function toggleMobileMenu() {
 }
 
 function closeMobileMenu() {
+    if (!mobileMenu || !menuToggle) return;
+    
     mobileMenu.classList.remove('active');
     menuToggle.classList.remove('active');
     
@@ -272,6 +286,8 @@ function animateSkillBars() {
  * Scroll to Top Button
  */
 function initScrollToTop() {
+    if (!backToTop) return;
+    
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
             backToTop.style.opacity = '1';
@@ -446,19 +462,21 @@ function initAccessibility() {
     document.body.insertBefore(skipLink, document.body.firstChild);
     
     // Focus management for mobile menu
-    mobileMenu.addEventListener('transitionend', () => {
-        if (mobileMenu.classList.contains('active')) {
-            const firstLink = mobileMenu.querySelector('.mobile-link');
-            if (firstLink) firstLink.focus();
-        }
-    });
+    if (mobileMenu) {
+        mobileMenu.addEventListener('transitionend', () => {
+            if (mobileMenu.classList.contains('active')) {
+                const firstLink = mobileMenu.querySelector('.mobile-link');
+                if (firstLink) firstLink.focus();
+            }
+        });
+    }
     
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
         // Close mobile menu with Escape key
-        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+        if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
             closeMobileMenu();
-            menuToggle.focus();
+            if (menuToggle) menuToggle.focus();
         }
         
         // Tab navigation enhancements

@@ -18,6 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
  * Hero Section Animations
  */
 function initHeroAnimations() {
+    // 检查关键元素是否存在，如果不存在则跳过 hero 动画
+    const heroTitle = document.querySelector('.hero-title');
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    const heroButtons = document.querySelector('.hero-buttons .btn');
+    
+    // 如果没有 hero 区域的元素，跳过此函数
+    if (!heroTitle && !heroSubtitle && !heroButtons) {
+        console.log('Hero section elements not found, skipping hero animations');
+        return;
+    }
+
     const tl = gsap.timeline({
         defaults: {
             ease: 'power3.out',
@@ -25,33 +36,62 @@ function initHeroAnimations() {
         }
     });
 
-    // Hero title animation
-    tl.from('.hero-title', {
-        y: 50,
-        opacity: 0,
-        stagger: 0.2
-    })
-    .from('.hero-subtitle', {
-        y: 30,
-        opacity: 0
-    }, '-=0.5')
-    .from('.stat-item', {
-        y: 30,
-        opacity: 0,
-        stagger: 0.2
-    }, '-=0.5')
-    .from('.hero-buttons .btn', {
-        y: 30,
-        opacity: 0,
-        stagger: 0.2
-    }, '-=0.5')
-    .from('.avatar-container', {
-        scale: 0,
-        opacity: 0,
-        rotation: 360
-    }, '-=1');
+    // Hero title animation (仅当元素存在时)
+    if (heroTitle) {
+        tl.from('.hero-title', {
+            y: 50,
+            opacity: 0,
+            stagger: 0.2
+        });
+    }
+    
+    if (heroSubtitle) {
+        tl.from('.hero-subtitle', {
+            y: 30,
+            opacity: 0
+        }, '-=0.5');
+    }
+    
+    // Stat items
+    const statItems = document.querySelectorAll('.stat-item');
+    if (statItems.length > 0) {
+        tl.from('.stat-item', {
+            y: 30,
+            opacity: 0,
+            stagger: 0.2
+        }, '-=0.5');
+    }
+    
+    // Hero buttons
+    if (heroButtons) {
+        tl.from('.hero-buttons .btn', {
+            y: 30,
+            opacity: 0,
+            stagger: 0.2
+        }, '-=0.5');
+    }
+    
+    // Avatar container
+    const avatarContainer = document.querySelector('.avatar-container');
+    if (avatarContainer) {
+        tl.from('.avatar-container', {
+            scale: 0,
+            opacity: 0,
+            rotation: 360
+        }, '-=1');
+    }
 
-    // Floating elements animation
+    // Floating elements animation (仅当元素存在时)
+    const element1 = document.querySelector('.element-1');
+    const element2 = document.querySelector('.element-2');
+    const element3 = document.querySelector('.element-3');
+    const element4 = document.querySelector('.element-4');
+    
+    if (!element1 && !element2 && !element3 && !element4) {
+        console.log('Floating elements not found, skipping floating animations');
+        return;
+    }
+
     const floatingTl = gsap.timeline({
         repeat: -1,
         yoyo: true,
@@ -60,30 +100,41 @@ function initHeroAnimations() {
         }
     });
 
-    floatingTl.to('.element-1', {
-        y: -20,
-        x: 20,
-        rotation: 5,
-        duration: 4
-    })
-    .to('.element-2', {
-        y: 20,
-        x: -20,
-        rotation: -5,
-        duration: 4
-    }, '-=4')
-    .to('.element-3', {
-        y: -15,
-        x: 15,
-        rotation: 3,
-        duration: 3
-    }, '-=4')
-    .to('.element-4', {
-        y: 15,
-        x: -15,
-        rotation: -3,
-        duration: 3
-    }, '-=3');
+    if (element1) {
+        floatingTl.to('.element-1', {
+            y: -20,
+            x: 20,
+            rotation: 5,
+            duration: 4
+        });
+    }
+    
+    if (element2) {
+        floatingTl.to('.element-2', {
+            y: 20,
+            x: -20,
+            rotation: -5,
+            duration: 4
+        }, element1 ? '-=4' : '0');
+    }
+    
+    if (element3) {
+        floatingTl.to('.element-3', {
+            y: -15,
+            x: 15,
+            rotation: 3,
+            duration: 3
+        }, (element1 || element2) ? '-=4' : '0');
+    }
+    
+    if (element4) {
+        floatingTl.to('.element-4', {
+            y: 15,
+            x: -15,
+            rotation: -3,
+            duration: 3
+        }, '-=3');
+    }
 }
 
 /**
@@ -192,6 +243,12 @@ function initCursorAnimations() {
         const cursorDot = document.getElementById('cursor-dot');
         const cursorRing = document.getElementById('cursor-ring');
         
+        // 如果元素不存在，跳过此功能
+        if (!cursorDot || !cursorRing) {
+            console.log('Cursor elements not found, skipping cursor animations');
+            return;
+        }
+        
         let cursorX = 0;
         let cursorY = 0;
         let ringX = 0;
@@ -269,21 +326,27 @@ function initFloatingElements() {
     });
     
     // Avatar ring rotation
-    gsap.to('.avatar-ring', {
-        rotation: 360,
-        duration: 20,
-        repeat: -1,
-        ease: 'none'
-    });
+    const avatarRing = document.querySelector('.avatar-ring');
+    if (avatarRing) {
+        gsap.to('.avatar-ring', {
+            rotation: 360,
+            duration: 20,
+            repeat: -1,
+            ease: 'none'
+        });
+    }
     
     // Avatar core pulse
-    gsap.to('.avatar-core', {
-        scale: 1.05,
-        duration: 2,
-        ease: 'power1.inOut',
-        repeat: -1,
-        yoyo: true
-    });
+    const avatarCore = document.querySelector('.avatar-core');
+    if (avatarCore) {
+        gsap.to('.avatar-core', {
+            scale: 1.05,
+            duration: 2,
+            ease: 'power1.inOut',
+            repeat: -1,
+            yoyo: true
+        });
+    }
 }
 
 /**
